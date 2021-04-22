@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<link rel="stylesheet" href="../static/css/style.css">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sign up for Music Cloud</title>
+</head>
+
+<style>
+body {
+  background-image: url("../static/imgs/frame3.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+</style>
+<body>
+    <h1 id="Music_Cloud"><strong>Music Cloud</strong></h1>
+  
+    <div style="text-align: center;">
+      <img src="../static/imgs/Logo.jpg" alt="Logo" width="200" height="100">
+      <figcaption>Infinity Music</figcaption>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div style="text-align: center">
+      <a href="{{url_for('login')}}"><input id= "create_but" type="submit" name="login_button" value="Login"></a>
+      <br>
+    </div>
+    <br>
+    <div style="text-align: center">
+      <a href="{{url_for('signup')}}"><input id= "create_but" type="submit" name="signup_button" value="SignUp"></a>
+      <br>
+    </div>
+    
+    <br>
+    <br>
+    <br>
+    <div style="text-align: center;">
+      {% if 'username' in session %}
+        <h3>You are {{session['username']}}!</h3>
+        <h3>You have visited {{userVisitingNumber}} times our application!</h3>        
+      {% else %}        
+        <h2>You are an anonymous user!</h2>              
+      {% endif %}
+      <h3>Total visit numbers of our application: {{totalVisitingNumber}}</h3>
+    </div>
+
+</body>
+
+</html>
